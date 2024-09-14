@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Gk Tweet
+{% endblock %}
+
+{% block content %}
+<div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+">
+    <div style="
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 2px 4px 8px rgba(240, 180, 60, 0.2);
+        text-align: center;
+        max-width: 800px;
+        width: 100%;
+    ">
+        <h1 style="
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        ">Welcome to the Demo Tweet App made by Gagan Tiwari in Django</h1>
+        <p style="
+            font-size: 1.5rem;
+            font-weight: 300;
+        ">Explore, yourself, enjoy the application, and feel free to reach out to me!</p>
+
+        <a
+        href="mailto:gagantiwari21587@gmail.com" style="
+            display: inline-block;
+            background: #00aaff;
+            color: white;
+            font-size: 2rem;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 80px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        ">
+            <i class="fas fa-envelope"></i>
+           
+            
+        </a>
+    </div>
+</div>
+
+
+
+{% endblock %}

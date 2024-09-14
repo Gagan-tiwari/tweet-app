@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-5" >
+    <div class="col-md-6">
+        <div class="card" style='
+        box-shadow: 0 4px 8px rgba(240, 180, 60, 0.2);'>
+            <div class="card-header text-center bg-primary text-white">
+                <h2 class="my-2">Create Your Account</h2>
+            </div>
+            <div class="card-body">
+                <form method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    
+                    <!-- Customize Form Fields with added classes manually -->
+                    <div class="mb-3">
+                        <label for="id_username" class="form-label">Username</label>
+                        {{ form.username }}
+                        <script>
+                            document.getElementById("id_username").classList.add("form-control");
+                        </script>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_email" class="form-label">Email</label>
+                        {{ form.email }}
+                        <script>
+                            document.getElementById("id_email").classList.add("form-control");
+                        </script>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_password1" class="form-label">Password</label>
+                        {{ form.password1 }}
+                        <script>
+                            document.getElementById("id_password1").classList.add("form-control");
+                        </script>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_password2" class="form-label">Confirm Password</label>
+                        {{ form.password2 }}
+                        <script>
+                            document.getElementById("id_password2").classList.add("form-control");
+                        </script>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success btn-lg">Register</button>
+                    </div>
+                </form>
+
+                <!-- Already registered message -->
+                <p class="text-center mt-4">Already have an account? <a href="{% url 'login' %}" class="text-primary">Login here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript for Bootstrap form validation -->
+<script>
+    (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
+{% endblock %}
